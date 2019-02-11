@@ -5,3 +5,12 @@ CREATE DATABASE xiaomi
 CHARSET=UTF8;
 USE xiaomi;
 
+-- 注册信息
+CREATE TABLE  xiaomi_login(
+    mid INT PRIMARY KEY AUTO_INCREMENT,
+    mname VARCHAR(32) UNIQUE,
+    mpwd VARCHAR(64)
+);
+INSERT INTO xiaomi_login VALUES
+(null,'lili',PASSWORD('12345678')),
+(null,'xiaoming',PASSWORD('99999999'));
