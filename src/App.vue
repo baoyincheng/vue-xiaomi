@@ -1,23 +1,37 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
-  </div>
+   <div class="app">
+     <router-view></router-view>
+     <FootGuide v-show="$route.meta.showfooter"></FootGuide>
+   </div>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
+// ajax链接测试
+/* eslint-disable */
+// import {reqImgList} from '@/api'
+// import axios from 'axios'
+import FootGuide from './components/FootGuide/FootGuide'
 export default {
-  name: 'App'
+  components: {
+    FootGuide
+  },
+  data(){
+    return{
+      img:[]
+    }
+  },
+  // async mounted(){
+  // const result =  await reqImgList()
+  // console.log(result)
+  // this.img = result
+  // }
+  // mounted(){
+  //   this.$store.dispatch('getImgList')
+  // }
+
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="stylus" rel="stylesheet/stylus">
+
 </style>
